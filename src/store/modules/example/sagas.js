@@ -3,13 +3,11 @@ import * as actions from './actions';
 import * as types from '../types';
 
 const req = () =>
-  new Promise((resolve, reject) => {
-    setTimeout(() => resolve(), 2000);
-    if (false) reject();
+  new Promise((resolve) => {
+    setTimeout(() => resolve(), 600);
   });
 
 function* exampleRequest() {
-  console.log('call');
   try {
     yield call(req);
     yield put(actions.clicaBotaoSuccess());
